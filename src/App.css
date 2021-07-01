@@ -1,0 +1,167 @@
+html,
+body,
+#root {
+  font: 0.9rem sans-serif;
+  background: #0a1f44;
+  color: #fff;
+  height: 100%;
+  margin: 0;
+}
+
+.main-container {
+  /* background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.418)),
+    url(./578946_stormy-weather-wallpapers-hd-wallpaper-backgrounds-of-your-choice_1989x1080_h.jpg);
+  background-size: cover;
+  background-position: center; */
+  background: #00c6ff;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #0072ff, #00c6ff);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #0072ff, #00c6ff); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+.search {
+  display: flex;
+  justify-content: center;
+  padding: 10px 30px;
+}
+.main-container {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.search__input {
+  display: flex;
+  align-items: center;
+  height: 30px;
+  padding: 10px 30px;
+  border-radius: 999px;
+  width: 75vw;
+  margin: 0 auto;
+  margin-top: 0px;
+  max-width: 560px;
+  background-color: #fff;
+}
+.search__input > input {
+  flex: 1;
+  padding: 10px 30px;
+  font-size: medium;
+  border: none;
+}
+
+.search__input > input:focus {
+  outline-width: 0;
+}
+.search__inputIcon {
+  color: gray;
+}
+.number__input {
+  display: flex;
+  align-items: center;
+  height: 30px;
+  padding: 10px 30px;
+  border-radius: 999px;
+  width: 75vw;
+  margin: 0 auto;
+  margin-top: 0px;
+  max-width: 560px;
+  background-color: #fff;
+}
+.city {
+  margin-top: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 40px 8%;
+  border-radius: 20px;
+  /* background: #56ccf2; 
+  
+  background: -webkit-linear-gradient(
+    to right,
+    #2f80ed,
+    #56ccf2
+  ); 
+  background: linear-gradient(
+    to right,
+    #2f80ed,
+    #56ccf2
+  ); 
+  */
+  background: #f85032;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #e73827, #f85032);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #e73827, #f85032); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+p {
+  margin-top: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.city-temp {
+  font-size: 5rem;
+  font-weight: bold;
+  margin-top: 10px;
+  color: #fff;
+  text-align: center;
+}
+
+.city sup {
+  font-size: 0.5em;
+}
+
+.city-name {
+  font-size: 2em;
+}
+
+.city-name sup {
+  padding: 0.2em 0.6em;
+  margin-left: 0.2em;
+  border-radius: 30px;
+  color: #fff;
+  background: #ff8c00;
+}
+
+.city-icon {
+  margin-top: 10px;
+  width: 100px;
+  height: 100px;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.error {
+  color: greenyellow;
+  font-weight: bolder;
+}
+
+@media only screen and (max-width: 600px) {
+  .search {
+    padding: 20px 15%;
+  }
+
+  .city {
+    padding: 40px 20%;
+  }
+}
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+.search_button{
+  background: #f85032;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #e73827, #f85032);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #e73827, #f85032); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  border-radius: 990px !important;
+    box-shadow: #2193b0 !important;
+    color: white;
+     height: 48px !important;
+     padding: 0 30px !important;
+     margin-right: 30px;
+}
