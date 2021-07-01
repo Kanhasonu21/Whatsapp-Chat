@@ -13,15 +13,15 @@ body,
     url(./578946_stormy-weather-wallpapers-hd-wallpaper-backgrounds-of-your-choice_1989x1080_h.jpg);
   background-size: cover;
   background-position: center; */
-  background: #00c6ff;  /* fallback for old browsers */
-background: -webkit-linear-gradient(to right, #0072ff, #00c6ff);  /* Chrome 10-25, Safari 5.1-6 */
-background: linear-gradient(to right, #0072ff, #00c6ff); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
+  background: #00c6ff; /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #0072ff, #00c6ff); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #0072ff, #00c6ff); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 .search {
   display: flex;
   justify-content: center;
   padding: 10px 30px;
+  color:green
 }
 .main-container {
   height: 100%;
@@ -89,9 +89,7 @@ background: linear-gradient(to right, #0072ff, #00c6ff); /* W3C, IE 10+/ Edge, F
     #56ccf2
   ); 
   */
-  background: #f85032;  /* fallback for old browsers */
-background: -webkit-linear-gradient(to right, #e73827, #f85032);  /* Chrome 10-25, Safari 5.1-6 */
-background: linear-gradient(to right, #e73827, #f85032); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background-image: linear-gradient(to right, #3ab5b0 0%, #3d99be 31%, #56317a 100%);
 }
 
 p {
@@ -136,8 +134,10 @@ p {
   align-items: center;
 }
 .error {
-  color: greenyellow;
-  font-weight: bolder;
+  color: red;
+display: flex;
+justify-content: center;
+  font-size: 1.5rem;
 }
 
 @media only screen and (max-width: 600px) {
@@ -149,19 +149,17 @@ p {
     padding: 40px 20%;
   }
 }
-input[type=number]::-webkit-inner-spin-button, 
-input[type=number]::-webkit-outer-spin-button { 
-  -webkit-appearance: none; 
-  margin: 0; 
+input[type='number']::-webkit-inner-spin-button,
+input[type='number']::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
-.search_button{
-  background: #f85032;  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to right, #e73827, #f85032);  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to right, #e73827, #f85032); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+.search_button {
+  background-image: linear-gradient(to top, #209cff 0%, #68e0cf 100%);
   border-radius: 990px !important;
-    box-shadow: #2193b0 !important;
-    color: white;
-     height: 48px !important;
-     padding: 0 30px !important;
-     margin-right: 30px;
+  box-shadow: #2193b0 !important;
+  color: green;
+  height: 48px !important;
+  padding: 0 30px !important;
+  margin-right: 30px;
 }

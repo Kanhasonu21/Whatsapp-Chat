@@ -5,16 +5,29 @@ import WhatsAppIcon from '@material-ui/icons/WhatsApp';
 // import Alert from '@material-ui/lab/Alert';
 
 import './App.css';
+import { Typography } from '@material-ui/core';
 const App = props => {
   const [query, setQuery] = useState('');
+  const [errors, setError] = useState({
+    phone: ''
+  });
   const searchInput = useRef(null);
 
   useEffect(() => {
     searchInput.current.focus();
   }, [query]);
+  const validateField = () => {
+    let errorMsg = '';
+    if (!query) errorMsg = 'Please input a number';
+    if (query.length < 10) errorMsg = 'Please input a valid number';
+    if (query.length > 10) errorMsg = 'Please input a valid number';
 
+    return errorMsg;
+  };
   const search = e => {
     e.preventDefault();
+    let data = validateField();
+    setError({ phone: data });
     if (query.length === 10) {
       window.location = `https://api.whatsapp.com/send/?phone=91${query}&text&app_absent=0`;
       // } else {
@@ -37,15 +50,23 @@ const App = props => {
             placeholder="Enter phone number"
             inputRef={searchInput}
             value={query}
-            onChange={e => setQuery(e.target.value)}
+            onChange={e => {
+              setQuery(e.target.value);
+              setError({ phone: '' });
+            }}
             error={query.length > 10 ? 'max ' : null}
           />
         </div>
         <div className="search">
           <Button className="search_button" variant="contained" color="primary" type="submit">
-            <WhatsAppIcon /> &nbsp; &nbsp; CHAT
+            <WhatsAppIcon /> &nbsp; &nbsp; <Typography style={{ font: 'message-box' }}>CHAT</Typography>
           </Button>
         </div>
+        {errors.phone && (
+          <div className="error">
+            <span>{errors.phone}</span>
+          </div>
+        )}
       </form>
     </div>
   );
