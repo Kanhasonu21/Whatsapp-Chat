@@ -42,7 +42,7 @@ const App = props => {
     }
   };
   const handleChange = e => {
-    let { value, min, max } = e.target;
+    let { value} = e.target;
     if (value.length < 11) {
       setQuery(value);
       setError({ phone: '' });
