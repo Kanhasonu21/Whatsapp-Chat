@@ -1,14 +1,18 @@
 import React, { useState, useRef, useEffect } from 'react';
-import Input from '@material-ui/core/Input';
 import Button from '@material-ui/core/Button';
 import WhatsAppIcon from '@material-ui/icons/WhatsApp';
-// import Alert from '@material-ui/lab/Alert';
 import CodeIcon from '@material-ui/icons/Code';
+import Snackbar from '@material-ui/core/Snackbar';
+import MuiAlert from '@material-ui/lab/Alert';
 
 import './App.css';
 import { Typography } from '@material-ui/core';
+function Alert(props) {
+  return <MuiAlert elevation={6} variant="filled" {...props} />;
+}
 const App = props => {
   const [query, setQuery] = useState('');
+  const [open, setOpen] = useState(false);
   const [errors, setError] = useState({
     phone: ''
   });
@@ -17,10 +21,14 @@ const App = props => {
   useEffect(() => {
     searchInput.current.focus();
   }, [query]);
+  useEffect(() => {
+    if (errors.phone.length > 0) setOpen(true);
+  }, [errors]);
   const validateField = () => {
+    console.log(query.length);
     let errorMsg = '';
-    if (!query) errorMsg = 'Please input a number';
-    if (query.length < 10) errorMsg = 'Please input a valid number';
+    if (query.length === 0) errorMsg = 'Please input a number';
+    if (query.length < 10 && query.length > 0) errorMsg = 'Please input a valid number';
     if (query.length > 10) errorMsg = 'Please input a valid number';
 
     return errorMsg;
@@ -31,31 +39,28 @@ const App = props => {
     setError({ phone: data });
     if (query.length === 10) {
       window.location = `https://api.whatsapp.com/send/?phone=91${query}&text&app_absent=0`;
-      // } else {
-      //   return (
-      //     <Alert severity="success" color="info">
-      //       This is a success alert — check it out!
-      //     </Alert>
-      //   );
     }
   };
-
+  const handleChange = e => {
+    let { value, min, max } = e.target;
+    if (value.length < 11) {
+      setQuery(value);
+      setError({ phone: '' });
+    }
+  };
   return (
     <div className="main-container">
       <form onSubmit={e => search(e)}>
         <div className="search__input">
-          <Input
+          <input
             type="number"
-            fullWidth={true}
-            disableUnderline={true}
             placeholder="Enter phone number"
-            inputRef={searchInput}
+            ref={searchInput}
             value={query}
             onChange={e => {
-              setQuery(e.target.value);
-              setError({ phone: '' });
+              handleChange(e);
             }}
-            error={query.length > 10 ? 'max ' : null}
+            max="10000000000"
           />
         </div>
         <div className="search">
@@ -64,9 +69,15 @@ const App = props => {
           </Button>
         </div>
         {errors.phone && (
-          <div className="error">
-            <span>{errors.phone}</span>
-          </div>
+          <Snackbar
+            autoHideDuration={2000}
+            open={open}
+            key={{ vertical: 'top', horizontal: 'center' }}
+            anchorOrigin={{ vertical: 'top', horizontal: 'center' }}
+            onClose={() => setOpen(false)}
+          >
+            <Alert severity="error">{errors.phone}</Alert>
+          </Snackbar>
         )}
       </form>
       <footer style={{ position: 'absolute', bottom: '0.5rem', fontSize: '0.5rem' }}>

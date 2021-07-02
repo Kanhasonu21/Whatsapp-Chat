@@ -42,12 +42,15 @@ body,
   margin-top: 0px;
   max-width: 560px;
   background-color: #fff;
+  
 }
 .search__input > input {
   flex: 1;
-  padding: 10px 30px;
+  /* padding: 10px 30px; */
+  text-align:center;
   font-size: medium;
   border: none;
+  font-family: 'Roboto', sans-serif;
 }
 
 .search__input > input:focus {
