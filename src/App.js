@@ -3,7 +3,7 @@ import Input from '@material-ui/core/Input';
 import Button from '@material-ui/core/Button';
 import WhatsAppIcon from '@material-ui/icons/WhatsApp';
 // import Alert from '@material-ui/lab/Alert';
-import FavoriteIcon from '@material-ui/icons/Favorite';
+import CodeIcon from '@material-ui/icons/Code';
 
 import './App.css';
 import { Typography } from '@material-ui/core';
@@ -69,10 +69,11 @@ const App = props => {
           </div>
         )}
       </form>
-      <footer style={{ position: 'absolute', bottom: '2rem', fontSize: '1.5rem' }}>
-        <span>
-          Made with <FavoriteIcon style={{ color: 'red' }} /> by Kanhaiya{' '}
-        </span>
+      <footer style={{ position: 'absolute', bottom: '0.5rem', fontSize: '0.5rem' }}>
+        <b>
+          <CodeIcon />
+          <span>by Kanhaiya</span>
+        </b>
       </footer>
     </div>
   );
