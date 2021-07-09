@@ -25,7 +25,6 @@ const App = props => {
     if (errors.phone.length > 0) setOpen(true);
   }, [errors]);
   const validateField = () => {
-    console.log(query.length);
     let errorMsg = '';
     if (query.length === 0) errorMsg = 'Please input a number';
     if (query.length < 10 && query.length > 0) errorMsg = 'Please input a valid number';
@@ -42,7 +41,7 @@ const App = props => {
     }
   };
   const handleChange = e => {
-    let { value} = e.target;
+    let { value } = e.target;
     if (value.length < 11) {
       setQuery(value);
       setError({ phone: '' });
